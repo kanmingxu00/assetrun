@@ -1,7 +1,8 @@
-AssetRun.sln
+*.sln
 Library/
 Logs/
 Packages/
 ProjectSettings/
 Temp/
 UserSettings/
+*.csproj
