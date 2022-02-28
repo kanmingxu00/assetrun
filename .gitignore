@@ -6,3 +6,5 @@ ProjectSettings/
 Temp/
 UserSettings/
 *.csproj
+.vs
+obj/
