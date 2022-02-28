@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5457931167190214626}
   - component: {fileID: 5457931167190214637}
   - component: {fileID: 9090355882178571758}
-  - component: {fileID: 8196377854291917951}
   - component: {fileID: 1567849534}
+  - component: {fileID: 7419833399760947926}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -117,20 +117,6 @@ MonoBehaviour:
   gravity: 12
   jumpHeight: 3
   jumpSpeed: 10
---- !u!114 &8196377854291917951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5457931167190214636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd334decebf8559458b84de937df3617, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 3255244711279753246, guid: bc5b98881b462f545baaa6a3f1232cfc, type: 3}
-  projectileSpeed: 30
 --- !u!143 &1567849534
 CharacterController:
   m_ObjectHideFlags: 0
@@ -149,6 +135,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7419833399760947926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5457931167190214636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b4d9d8302e62c41933a8a0eec3eb5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
 --- !u!1 &5457931167661405867
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,6 +160,7 @@ GameObject:
   - component: {fileID: 5457931167661405865}
   - component: {fileID: 5457931167661405864}
   - component: {fileID: 963194226}
+  - component: {fileID: 4028756237970948568}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -249,3 +249,17 @@ MonoBehaviour:
   player: {fileID: 5457931167190214624}
   minAngle: -90
   maxAngle: 90
+--- !u!114 &4028756237970948568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5457931167661405867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd334decebf8559458b84de937df3617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 0}
+  projectileSpeed: 10

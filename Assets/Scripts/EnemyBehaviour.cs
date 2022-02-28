@@ -30,19 +30,37 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+
+            //collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageAmount);
+            hitPlayer(collision.gameObject);
+
+
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            
-            // hitPlayer();
-            
-        }
+        //if (other.CompareTag("Player"))
+        //{
+
+        //     hitPlayer(other.gameObject);
+
+
+        //}
         if (other.CompareTag("Projectile"))
         {
 
             die();
         }
+    }
+
+    void hitPlayer(GameObject player)
+    {
+        player.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageAmount);
     }
 
     void die()
