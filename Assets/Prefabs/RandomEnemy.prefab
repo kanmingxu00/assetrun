@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2407922935336769897}
   - component: {fileID: 2974367210428544037}
   - component: {fileID: 8935324940040424637}
+  - component: {fileID: 2248673060033116503}
   m_Layer: 0
   m_Name: RandomEnemy
   m_TagString: Enemy
@@ -111,5 +112,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   moveSpeed: 10
-  minDistance: 0
+  minDistance: 5
   damageAmount: 20
+--- !u!54 &2248673060033116503
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8792637479696583506}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
