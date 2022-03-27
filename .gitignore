@@ -9,3 +9,4 @@ UserSettings/
 .vs
 obj/
 AssetRunBuild/
+.DS_Store
