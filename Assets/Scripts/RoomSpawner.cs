@@ -17,10 +17,6 @@ public class RoomSpawner : MonoBehaviour
         
         player = GameObject.FindGameObjectWithTag("Player").transform;
         bounds = GetComponent<MeshCollider>().bounds;
-
-        Debug.Log(GetComponent<MeshCollider>().bounds);
-        Debug.Log(bounds.Contains(player.position));
-        Debug.Log(bounds.min);
         SpawnEnemies();
     }
 
@@ -48,6 +44,7 @@ public class RoomSpawner : MonoBehaviour
             as GameObject;
 
         spawnedEnemy.transform.parent = gameObject.transform;
+        
         enemiesSpawned++;
     }
 
