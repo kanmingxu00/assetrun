@@ -8,10 +8,12 @@ public class EnemyBehaviour : MonoBehaviour
     public float moveSpeed = 10f;
     public float minDistance = 10f;
     public int damageAmount = 20;
-
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
+        anim.SetInteger("animState", 0);
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -25,8 +27,18 @@ public class EnemyBehaviour : MonoBehaviour
 
         if (Vector3.Distance(transform.position, player.position) > minDistance)
         {
+            anim.SetInteger("animState", 1);
             transform.LookAt(player);
-            transform.position = Vector3.MoveTowards(transform.position, player.position, step);
+            if (!anim.applyRootMotion)
+            {
+                Vector3 target = player.position;
+                target.y = transform.position.y;
+                transform.position = Vector3.MoveTowards(transform.position, target, step);
+            }
+        }
+        else
+        {
+            anim.SetInteger("animState", 0);
         }
     }
 
