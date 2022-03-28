@@ -6,9 +6,13 @@ public class EnemyBehaviour : MonoBehaviour
 {
     public Transform player;
     public float moveSpeed = 10f;
-    public float minDistance = 10f;
+    public float chaseRange = 30f;
+    public float attackRange = 3f;
     public int damageAmount = 20;
     public Animator anim;
+    public AudioClip enemySFX;
+    public AudioClip enemyDeathSFX;
+    public GameObject enemyVFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +22,10 @@ public class EnemyBehaviour : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
+        if (enemySFX)
+        {
+            AudioSource.PlayClipAtPoint(enemySFX, transform.position);
+        }
     }
 
     // Update is called once per frame
@@ -25,16 +33,23 @@ public class EnemyBehaviour : MonoBehaviour
     {
         float step = moveSpeed * Time.deltaTime;
 
-        if (Vector3.Distance(transform.position, player.position) > minDistance)
+        float playerDistance = Vector3.Distance(transform.position, player.position);
+        if (playerDistance < chaseRange && playerDistance > attackRange)
         {
             anim.SetInteger("animState", 1);
-            transform.LookAt(player);
+            
+            FaceTarget(player.position);
             if (!anim.applyRootMotion)
             {
                 Vector3 target = player.position;
                 target.y = transform.position.y;
                 transform.position = Vector3.MoveTowards(transform.position, target, step);
             }
+        }
+        else if (playerDistance <= attackRange)
+        {
+            anim.SetInteger("animState", 3);
+            FaceTarget(player.position);
         }
         else
         {
@@ -75,8 +90,24 @@ public class EnemyBehaviour : MonoBehaviour
         player.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageAmount);
     }
 
+    void FaceTarget(Vector3 target)
+    {
+        Vector3 directionToTarget = (target - transform.position).normalized;
+        directionToTarget.y = 0;
+        Quaternion lookRotation = Quaternion.LookRotation(directionToTarget);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 10 * Time.deltaTime);
+    }
+
     void die()
     {
+        anim.SetInteger("animState", 4);
+        var particles = Instantiate(enemyVFX, transform.position, transform.rotation);
+        Destroy(particles, 2);
+        if (enemyDeathSFX)
+        {
+            
+            AudioSource.PlayClipAtPoint(enemyDeathSFX, transform.position);
+        }
         Destroy(gameObject);
     }
 }

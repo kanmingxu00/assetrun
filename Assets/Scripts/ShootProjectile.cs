@@ -11,8 +11,9 @@ public class ShootProjectile : MonoBehaviour
     public GameObject weapon3;
     public GameObject weapon4;
     public GameObject currentWeapon;
+    public AudioClip gunShotSFX;
     // Start is called before the first frame update
-
+    
     void Start()
     {
         currentWeapon = weapon1;
@@ -52,7 +53,8 @@ public class ShootProjectile : MonoBehaviour
     void Shoot()
     {
         GameObject projectile = Instantiate(currentWeapon, transform.position + transform.forward, transform.rotation);
-
+        AudioSource.PlayClipAtPoint(gunShotSFX, transform.position);
+        
         var _rb = projectile.GetComponent<Rigidbody>();
         _rb.AddForce(transform.forward * projectileSpeed, ForceMode.VelocityChange);
     }

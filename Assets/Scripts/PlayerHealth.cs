@@ -7,11 +7,12 @@ public class PlayerHealth : MonoBehaviour
 {
     public int startingHealth = 100;
     public int currentHealth;
-
+    public Slider healthSlider;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = startingHealth;
+        healthSlider.value = currentHealth;
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth > 0)
         {
             currentHealth -= damageAmount;
+            healthSlider.value = currentHealth;
             Debug.Log("Took " + damageAmount + " damage");
         }
         if (currentHealth <= 0)
@@ -36,5 +38,6 @@ public class PlayerHealth : MonoBehaviour
     void PlayerDies()
     {
         Debug.Log("Player Died");
+        FindObjectOfType<LevelManager>().LevelLost();
     }
 }

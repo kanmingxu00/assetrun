@@ -87,7 +87,7 @@ public class LevelManager : MonoBehaviour
 
         // play level status sfx
         // sfx clip is received as an argument
-        AudioSource.PlayClipAtPoint(statusSFX, Camera.main.transform.position);
+        // AudioSource.PlayClipAtPoint(statusSFX, Camera.main.transform.position);
 
     }
     public void LevelLost()
