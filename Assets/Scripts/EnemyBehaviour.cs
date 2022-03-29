@@ -100,6 +100,8 @@ public class EnemyBehaviour : MonoBehaviour
 
     void die()
     {
+        LevelManager.score += 1;
+        Database.money += 1;
         anim.SetInteger("animState", 4);
         var particles = Instantiate(enemyVFX, transform.position, transform.rotation);
         Destroy(particles, 2);

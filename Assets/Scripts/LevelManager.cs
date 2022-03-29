@@ -50,10 +50,10 @@ public class LevelManager : MonoBehaviour
             {
                 LevelLost();
             }
-            if (score > finalScore)
-            {
-                LevelBeat();
-            }
+            //if (score > finalScore)
+            //{
+            //    LevelBeat();
+            //}
         }
 
         SetScoreText();

@@ -36,9 +36,12 @@ public class RoomSpawner : MonoBehaviour
     void SpawnEnemies()
     {
         Vector3 enemyPosition;
-        enemyPosition.x = Random.Range(bounds.min.x, bounds.max.x);
+        // buggy for now, so spawn iin the middle LOL
+        float xmid = (bounds.min.x + bounds.max.x) / 2;
+        float zmid = (bounds.min.z + bounds.max.z) / 2;
+        enemyPosition.x = Random.Range(xmid - 4, xmid + 4);
         enemyPosition.y = 1.7f;
-        enemyPosition.z = Random.Range(bounds.min.z, bounds.max.z);
+        enemyPosition.z = Random.Range(zmid - 4, zmid + 4);
 
         GameObject spawnedEnemy = Instantiate(enemyPrefab, enemyPosition, transform.rotation) 
             as GameObject;

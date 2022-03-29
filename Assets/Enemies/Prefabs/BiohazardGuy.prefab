@@ -1678,6 +1678,7 @@ GameObject:
   - component: {fileID: 2232333630221263062}
   - component: {fileID: 2232333630228231856}
   - component: {fileID: 559155343138829949}
+  - component: {fileID: 646333524891555260}
   m_Layer: 0
   m_Name: BiohazardGuy
   m_TagString: Enemy
@@ -1790,6 +1791,19 @@ MonoBehaviour:
   enemySFX: {fileID: 0}
   enemyDeathSFX: {fileID: 0}
   enemyVFX: {fileID: 4356934830103483482, guid: c911e216f2625784fa0d8326eccd3cdb, type: 3}
+--- !u!65 &646333524891555260
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2232333630220914528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 1.3, z: 0}
 --- !u!1 &2232333630220916448
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,4 +25,29 @@ public class Database : MonoBehaviour
     {
         
     }
+
+    public void AddMoney(int add)
+    {
+        money += add;
+    }
+
+    public void SubMoney(int sub)
+    {
+        money -= sub;
+    }
+
+    public int GetMoney()
+    {
+        return money;
+    }
+
+    public void AddBitcoin(int add)
+    {
+        bitcoin += add;
+    }
+
+    public void SubBitcoin(int sub)
+    {
+        bitcoin -= sub;
+    }
 }
