@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
     public GameObject player;
     private PlayerHealth playerHealth;
     // Start is called before the first frame update
-
+    public static int playerProjectileDamage = 10;
     private void Awake()
     {
         isGameOver = false;

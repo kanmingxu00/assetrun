@@ -13,9 +13,13 @@ public class EnemyBehaviour : MonoBehaviour
     public AudioClip enemySFX;
     public AudioClip enemyDeathSFX;
     public GameObject enemyVFX;
+    EnemyHealth enemyHealth;
+    int health;
     // Start is called before the first frame update
     void Start()
     {
+        enemyHealth = GetComponent<EnemyHealth>();
+        health = enemyHealth.currentHealth;
         anim = GetComponent<Animator>();
         anim.SetInteger("animState", 0);
         if (player == null)
@@ -31,6 +35,13 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        health = enemyHealth.currentHealth;
+
+        if (health <=0)
+        {
+            die();
+        }
+        
         float step = moveSpeed * Time.deltaTime;
 
         float playerDistance = Vector3.Distance(transform.position, player.position);
@@ -55,6 +66,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
             anim.SetInteger("animState", 0);
         }
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -66,22 +78,6 @@ public class EnemyBehaviour : MonoBehaviour
             hitPlayer(collision.gameObject);
 
 
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //if (other.CompareTag("Player"))
-        //{
-
-        //     hitPlayer(other.gameObject);
-
-
-        //}
-        if (other.CompareTag("Projectile"))
-        {
-
-            die();
         }
     }
 
