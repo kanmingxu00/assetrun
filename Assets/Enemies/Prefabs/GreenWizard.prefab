@@ -2010,6 +2010,7 @@ GameObject:
   - component: {fileID: 2457862104542778912}
   - component: {fileID: 2498490739681416318}
   - component: {fileID: 7599436735685363109}
+  - component: {fileID: -831616572062752700}
   m_Layer: 0
   m_Name: GreenWizard
   m_TagString: Enemy
@@ -2087,6 +2088,21 @@ MonoBehaviour:
   enemySFX: {fileID: 0}
   enemyDeathSFX: {fileID: 0}
   enemyVFX: {fileID: 4356934830103483482, guid: c911e216f2625784fa0d8326eccd3cdb, type: 3}
+--- !u!114 &-831616572062752700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2544175670137127982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8dedf7903e75b740b8d859e8a68e044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: 0
+  healthSlider: {fileID: 0}
 --- !u!1 &2544185569571819738
 GameObject:
   m_ObjectHideFlags: 0

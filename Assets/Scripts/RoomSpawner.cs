@@ -11,6 +11,7 @@ public class RoomSpawner : MonoBehaviour
     bool isActive = false;
     public Transform player;
     Bounds bounds;
+    GameObject[] doors;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,16 +40,25 @@ public class RoomSpawner : MonoBehaviour
         // buggy for now, so spawn iin the middle LOL
         float xmid = (bounds.min.x + bounds.max.x) / 2;
         float zmid = (bounds.min.z + bounds.max.z) / 2;
-        enemyPosition.x = Random.Range(xmid - 4, xmid + 4);
+        enemyPosition.x = Random.Range(bounds.min.x, bounds.max.x);
         enemyPosition.y = 1.7f;
-        enemyPosition.z = Random.Range(zmid - 4, zmid + 4);
-
-        GameObject spawnedEnemy = Instantiate(enemyPrefab, enemyPosition, transform.rotation) 
+        enemyPosition.z = Random.Range(bounds.min.z, bounds.max.z);
+        Collider[] colliders = Physics.OverlapSphere(enemyPosition, 0.01f);
+        Debug.Log(colliders);
+        foreach(Collider col in colliders)
+        {
+            Debug.Log(col);
+        }
+        if (colliders.Length == 0)
+        {
+            GameObject spawnedEnemy = Instantiate(enemyPrefab, enemyPosition, transform.rotation) 
             as GameObject;
 
-        spawnedEnemy.transform.parent = gameObject.transform;
+            spawnedEnemy.transform.parent = gameObject.transform;
         
-        enemiesSpawned++;
+            enemiesSpawned++;
+        }
+        
     }
 
     bool PlayerInRoom()
