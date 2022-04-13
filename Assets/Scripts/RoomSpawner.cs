@@ -12,6 +12,7 @@ public class RoomSpawner : MonoBehaviour
     public Transform player;
     Bounds bounds;
     GameObject[] doors;
+    bool spawningRepeatedly = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,11 @@ public class RoomSpawner : MonoBehaviour
         if (!isActive && PlayerInRoom())
         {
             isActive = true;
+        }
+        if (isActive && !spawningRepeatedly)
+        {
+            spawningRepeatedly = true;
+            SpawnEnemiesRepeating();
         }
     }
 
@@ -59,6 +65,15 @@ public class RoomSpawner : MonoBehaviour
             enemiesSpawned++;
         }
         
+    }
+
+    void SpawnEnemiesRepeating()
+    {
+        SpawnEnemies();
+        if (enemiesSpawned < enemyCount)
+        {
+            Invoke("SpawnEnemiesRepeating", Random.Range(0.5f, 2.5f));
+        }
     }
 
     bool PlayerInRoom()
