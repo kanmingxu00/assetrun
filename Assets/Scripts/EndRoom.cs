@@ -17,12 +17,7 @@ public class EndRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("not in");
-        if (PlayerInRoom())
-        {
-            Debug.Log("in");
-            CheckCleared();
-        }
+        
     }
 
     void CheckCleared()

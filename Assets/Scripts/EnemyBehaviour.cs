@@ -1,23 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class EnemyBehaviour : MonoBehaviour
 {
     public Transform player;
     public float moveSpeed = 10f;
     public float chaseRange = 30f;
     public float attackRange = 3f;
-    public int damageAmount = 20;
+    int damageAmount = 20;
     public Animator anim;
     public AudioClip enemySFX;
     public AudioClip enemyDeathSFX;
     public GameObject enemyVFX;
     EnemyHealth enemyHealth;
     int health;
+    public NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+        agent.stoppingDistance = attackRange;
         enemyHealth = GetComponent<EnemyHealth>();
         health = enemyHealth.currentHealth;
         anim = GetComponent<Animator>();
@@ -47,15 +50,16 @@ public class EnemyBehaviour : MonoBehaviour
         float playerDistance = Vector3.Distance(transform.position, player.position);
         if (playerDistance < chaseRange && playerDistance > attackRange)
         {
-            anim.SetInteger("animState", 1);
+            anim.SetInteger("animState", 2);
             
             FaceTarget(player.position);
-            if (!anim.applyRootMotion)
-            {
-                Vector3 target = player.position;
-                target.y = transform.position.y;
-                transform.position = Vector3.MoveTowards(transform.position, target, step);
-            }
+            agent.SetDestination(player.position);
+            // if (!anim.applyRootMotion)
+            // {
+            //     Vector3 target = player.position;
+            //     target.y = transform.position.y;
+            //     transform.position = Vector3.MoveTowards(transform.position, target, step);
+            // }
         }
         else if (playerDistance <= attackRange)
         {

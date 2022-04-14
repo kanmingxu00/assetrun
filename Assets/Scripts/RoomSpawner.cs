@@ -19,6 +19,8 @@ public class RoomSpawner : MonoBehaviour
         
         player = GameObject.FindGameObjectWithTag("Player").transform;
         bounds = GetComponent<MeshCollider>().bounds;
+        Debug.Log(bounds.min);
+        Debug.Log(bounds.max);
         SpawnEnemies();
     }
 
@@ -49,7 +51,7 @@ public class RoomSpawner : MonoBehaviour
         enemyPosition.x = Random.Range(bounds.min.x, bounds.max.x);
         enemyPosition.y = 1.7f;
         enemyPosition.z = Random.Range(bounds.min.z, bounds.max.z);
-        Collider[] colliders = Physics.OverlapSphere(enemyPosition, 0.01f);
+        Collider[] colliders = Physics.OverlapSphere(enemyPosition + new Vector3(0, 1.0f, 0), 0.9f);
         Debug.Log(colliders);
         foreach(Collider col in colliders)
         {

@@ -1680,6 +1680,7 @@ GameObject:
   - component: {fileID: 559155343138829949}
   - component: {fileID: 646333524891555260}
   - component: {fileID: -7712406842396292317}
+  - component: {fileID: -8701192377723939611}
   m_Layer: 0
   m_Name: BiohazardGuy
   m_TagString: Enemy
@@ -1766,7 +1767,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 72b4540b72762d94da8673a44e2d23e4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1793,6 +1794,7 @@ MonoBehaviour:
   enemySFX: {fileID: 0}
   enemyDeathSFX: {fileID: 0}
   enemyVFX: {fileID: 4356934830103483482, guid: c911e216f2625784fa0d8326eccd3cdb, type: 3}
+  agent: {fileID: 0}
 --- !u!65 &646333524891555260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1821,6 +1823,28 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   healthSlider: {fileID: 0}
+--- !u!195 &-8701192377723939611
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2232333630220914528}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &2232333630220916448
 GameObject:
   m_ObjectHideFlags: 0
