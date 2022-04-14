@@ -25,9 +25,9 @@ public class MeleeAttack : MonoBehaviour
     void Attack()
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position + new Vector3(0, 1f, 0), Vector3.forward, out hit, meleeRange + 1f))
+        if (Physics.Raycast(transform.position + new Vector3(0, 1f, 0), transform.forward, out hit, meleeRange + 1f))
         {
-            if(hit.collider.CompareTag("Player"))
+            if (hit.collider.CompareTag("Player"))
             {
                 playerHealth.TakeDamage(meleeDamage);
             }

@@ -1768,7 +1768,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.7602285, y: 2.0423589, z: 0.28884143}
-  m_Center: {x: 0.119885765, y: 0.52117914, z: -0.067320585}
+  m_Center: {x: 0.119885765, y: 1, z: -0.067320585}
 --- !u!114 &3263073773750347818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2159,7 +2159,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7849909225841866114}
-  - component: {fileID: 39685200027491711}
   m_Layer: 0
   m_Name: Base HumanRArmPalm
   m_TagString: Untagged
@@ -2186,19 +2185,6 @@ Transform:
   m_Father: {fileID: 1608017155184299671}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &39685200027491711
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5931361788683727348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.26910904, y: 0.1973747, z: 0.21684133}
-  m_Center: {x: -0.049688213, y: -0.02184051, z: -0.02328646}
 --- !u!1 &6144250464998781669
 GameObject:
   m_ObjectHideFlags: 0
