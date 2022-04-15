@@ -24,7 +24,6 @@ public class MeleeAttack : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("attacking");
         RaycastHit hit;
         if (Physics.Raycast(transform.position + new Vector3(0, 1f, 0), transform.forward, out hit, meleeRange + 1f))
         {

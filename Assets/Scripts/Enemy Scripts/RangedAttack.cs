@@ -22,7 +22,6 @@ public class RangedAttack : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("attack");
         if (projectile)
         {
             Instantiate(projectile, projectileSpawn.transform.position, projectileSpawn.transform.rotation);

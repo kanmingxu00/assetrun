@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class RoomSpawner : MonoBehaviour
 {
@@ -14,12 +15,22 @@ public class RoomSpawner : MonoBehaviour
     Bounds bounds;
     GameObject[] doors;
     bool spawningRepeatedly = false;
+    public float onMeshThreshold = 3f;
+    int totalSpawnCount;
     // Start is called before the first frame update
     void Start()
     {
-        
+        totalSpawnCount = repeatingSpawnCount + initialSpawnCount;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        bounds = GetComponent<MeshCollider>().bounds;
+        if (GetComponent<MeshCollider>())
+        {
+            bounds = GetComponent<MeshCollider>().bounds;
+        }
+        else if (GetComponent<Collider>())
+        {
+            bounds = GetComponent<Collider>().bounds;
+        }
+        
         
     }
 
@@ -55,7 +66,7 @@ public class RoomSpawner : MonoBehaviour
         {
             Debug.Log(col);
         }
-        if (colliders.Length == 0)
+        if (colliders.Length == 0 && OnNavMesh(enemyPosition))
         {
             GameObject spawnedEnemy = Instantiate(enemyPrefab, enemyPosition, transform.rotation) 
             as GameObject;
@@ -70,10 +81,29 @@ public class RoomSpawner : MonoBehaviour
     void SpawnEnemiesRepeating()
     {
         SpawnEnemies();
-        if (enemiesSpawned < repeatingSpawnCount)
+        if (enemiesSpawned < totalSpawnCount)
         {
             Invoke("SpawnEnemiesRepeating", Random.Range(0.5f, 2.5f));
         }
+    }
+
+    bool OnNavMesh(Vector3 position)
+    {
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(position, out hit, onMeshThreshold, NavMesh.AllAreas))
+        {
+            Debug.Log("in it");
+            Debug.Log(hit.position);
+            Debug.Log(position);
+            // Check if the positions are vertically aligned
+            if (Mathf.Approximately(position.x, hit.position.x)
+                && Mathf.Approximately(position.z, hit.position.z))
+            {
+            // Lastly, check if object is below navmesh
+                return true;
+            }
+        }
+        return false;
     }
 
     bool PlayerInRoom()

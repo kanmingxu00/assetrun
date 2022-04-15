@@ -30541,6 +30541,7 @@ MonoBehaviour:
   repeatingSpawnCount: 5
   initialSpawnCount: 10
   player: {fileID: 0}
+  onMeshThreshold: 3
 --- !u!1 &1520043379
 GameObject:
   m_ObjectHideFlags: 0
@@ -41723,6 +41724,7 @@ MonoBehaviour:
   repeatingSpawnCount: 5
   initialSpawnCount: 10
   player: {fileID: 0}
+  onMeshThreshold: 3
 --- !u!1001 &2071094612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42140,6 +42142,7 @@ MonoBehaviour:
   repeatingSpawnCount: 5
   initialSpawnCount: 10
   player: {fileID: 0}
+  onMeshThreshold: 3
 --- !u!1 &2077829556 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 153962, guid: 931c64dfd4f2c9247a14476c29f94228, type: 3}
