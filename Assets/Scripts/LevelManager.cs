@@ -21,6 +21,8 @@ public class LevelManager : MonoBehaviour
     private PlayerHealth playerHealth;
     // Start is called before the first frame update
     public static int playerProjectileDamage = 10;
+
+    public GameObject UI;
     private void Awake()
     {
         isGameOver = false;
@@ -29,6 +31,7 @@ public class LevelManager : MonoBehaviour
         backgroundMusic.enabled = true;
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
+        
     }
 
     void Start()
@@ -106,9 +109,11 @@ public class LevelManager : MonoBehaviour
     {
         /// <summary>method to specify what happens when the level is won</summary>
         ///
-
+        UI.SetActive(false);
+        gameObject.GetComponent<Fade>().FadeMe();
         // call SetGameOverStatus with "YOU WIN!"
         SetGameOverStatus("YOU WIN!", winSFX);
+        
 
         backgroundMusic.enabled = false;
         Invoke("LoadNextLevel", 2);

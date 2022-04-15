@@ -4,44 +4,43 @@ using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour
 {
-    public int selectedWeaponIndex = 0;
-    public GameObject selectedWeapon;
+    public int selectedWeapon = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        SelectWeapon();
+        SelectWeapon();    
     }
 
     // Update is called once per frame
     void Update()
     {
-        int previousselectedWeaponIndex = selectedWeaponIndex;
+        int previousSelectedWeapon = selectedWeapon;
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
-            if (selectedWeaponIndex >= transform.childCount - 1)
+            if (selectedWeapon >= transform.childCount - 1)
             {
-                selectedWeaponIndex = 0;
+                selectedWeapon = 0;
             } 
             else
             {
-                selectedWeaponIndex++;
+                selectedWeapon++;
             }
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
-            if (selectedWeaponIndex <= 0)
+            if (selectedWeapon <= 0)
             {
-                selectedWeaponIndex = transform.childCount - 1;
+                selectedWeapon = transform.childCount - 1;
             }
             else
             {
-                selectedWeaponIndex--;
+                selectedWeapon--;
             }
         }
 
-        if (previousselectedWeaponIndex != selectedWeaponIndex);
+        if (previousSelectedWeapon != selectedWeapon);
         {
             SelectWeapon();
         }
@@ -52,10 +51,9 @@ public class WeaponSwitching : MonoBehaviour
         int i = 0;
         foreach (Transform weapon in transform)
         {
-            if (i == selectedWeaponIndex)
+            if (i == selectedWeapon)
             {
                 weapon.gameObject.SetActive(true);
-                selectedWeapon = weapon.gameObject;
             }
             else
             {
