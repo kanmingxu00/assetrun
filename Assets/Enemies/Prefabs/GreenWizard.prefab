@@ -2170,8 +2170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3d3c5c444108644b3aa2e3c08323c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1746672929845058, guid: f44a3d27c7c4d174794ed789ee4333bc, type: 3}
+  projectile: {fileID: 1746672929845058, guid: 3fec07cc7d9e65b48a6d1c47b9caf4b8, type: 3}
   projectileSpawn: {fileID: 1099397651}
+  shotSFX: {fileID: 8300000, guid: 69674bdd7c4400b48b991251f8025f92, type: 3}
 --- !u!1 &2544185569571819738
 GameObject:
   m_ObjectHideFlags: 0

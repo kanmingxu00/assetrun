@@ -20,12 +20,12 @@ public class EnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.stoppingDistance = attackRange;
         agent.speed = moveSpeed;
         enemyHealth = GetComponent<EnemyHealth>();
         health = enemyHealth.currentHealth;
-        anim = GetComponent<Animator>();
         anim.SetInteger("animState", 0);
         if (player == null)
         {

@@ -5318,7 +5318,7 @@ GameObject:
   - component: {fileID: 7849266322294713060}
   m_Layer: 0
   m_Name: PunchingLady
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5419,7 +5419,7 @@ MonoBehaviour:
   player: {fileID: 0}
   moveSpeed: 10
   chaseRange: 30
-  attackRange: 3
+  attackRange: 5
   anim: {fileID: 3112063687354666563}
   enemySFX: {fileID: 0}
   enemyDeathSFX: {fileID: 0}

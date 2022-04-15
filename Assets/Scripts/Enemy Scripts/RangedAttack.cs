@@ -7,6 +7,7 @@ public class RangedAttack : MonoBehaviour
 
     public GameObject projectile;
     public GameObject projectileSpawn;
+    public AudioClip shotSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,10 @@ public class RangedAttack : MonoBehaviour
         if (projectile)
         {
             Instantiate(projectile, projectileSpawn.transform.position, projectileSpawn.transform.rotation);
+        }
+        if (shotSFX)
+        {
+            AudioSource.PlayClipAtPoint(shotSFX, projectileSpawn.transform.position);
         }
     }
 }

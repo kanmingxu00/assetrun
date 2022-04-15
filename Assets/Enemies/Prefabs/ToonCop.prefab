@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 4306319378937168100}
   m_Layer: 0
   m_Name: ToonCop
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1083,8 +1083,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3d3c5c444108644b3aa2e3c08323c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1830508508936448, guid: 659814323bd726a4999afb3ffef0a9d6, type: 3}
+  projectile: {fileID: 1830508508936448, guid: 9eb03197eebb4c34cab7650e5c19d952, type: 3}
   projectileSpawn: {fileID: 4306319377776911945}
+  shotSFX: {fileID: 8300000, guid: a917503d78d56ab4cabdb12d1aa216fa, type: 3}
 --- !u!114 &4306319378937168121
 MonoBehaviour:
   m_ObjectHideFlags: 0

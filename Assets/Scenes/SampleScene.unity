@@ -3419,8 +3419,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 3.5, y: 0.5, z: -7.5}
+      m_Extent: {x: 3.5, y: 0.5, z: 7.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -36368,8 +36368,8 @@ Mesh:
     firstVertex: 0
     vertexCount: 24
     localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0, y: 0, z: 0}
+      m_Center: {x: 3.5, y: 0.5, z: -7.5}
+      m_Extent: {x: 3.5, y: 0.5, z: 7.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -42936,7 +42936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5457931167190214624, guid: 7f28387dfddcc074684cbf942227ce43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.69
       objectReference: {fileID: 0}
     - target: {fileID: 5457931167190214624, guid: 7f28387dfddcc074684cbf942227ce43, type: 3}
       propertyPath: m_LocalPosition.z
