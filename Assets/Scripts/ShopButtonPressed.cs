@@ -25,11 +25,23 @@ public class ShopButtonPressed : MonoBehaviour
 
     public void Pressed()
     {
-        if (Database.money >= cost)
+        Debug.Log(Database.money);
+        Debug.Log(cost);
+        if (shopNumber == 0 && Database.money >= cost)
         {
             shopKeeper.GetComponent<MoneyShopScript>().ButtonPressed(ButtonNumber, shopNumber);
             gameObject.SetActive(false);
-        } else
+        }
+        else if (shopNumber == 1 && Database.bitcoin >= cost)
+        {
+            shopKeeper.GetComponent<MoneyShopScript>().ButtonPressed(ButtonNumber, shopNumber);
+            gameObject.SetActive(false);
+        } else if (shopNumber == 2)
+        {
+            shopKeeper.GetComponent<MoneyShopScript>().ButtonPressed(ButtonNumber, shopNumber);
+            gameObject.SetActive(false);
+        }
+        else
         {
             Debug.Log("NOT ENOUGH MONEY");
         }

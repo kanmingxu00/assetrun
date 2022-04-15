@@ -17,11 +17,20 @@ public class FPSController : MonoBehaviour
 
     void Start()
     {
+        if (PlayerPrefs.HasKey("moveSpeed"))
+        {
+            moveSpeed = PlayerPrefs.GetFloat("moveSpeed");
+        }
         characterController = GetComponent<CharacterController>();
     }
 
     void Update()
     {
+        if (LevelManager.isGameOver && LevelManager.isWon)
+        {
+            PlayerPrefs.SetFloat("moveSpeed", (int)moveSpeed);
+            PlayerPrefs.Save();
+        }
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 

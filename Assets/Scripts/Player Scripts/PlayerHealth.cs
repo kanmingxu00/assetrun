@@ -6,14 +6,29 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public int startingHealth = 100;
+    public int maxHealth = 100;
     public int currentHealth;
     public Slider healthSlider;
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.HasKey("startingHealth"))
+        {
+            startingHealth = PlayerPrefs.GetInt("startingHealth");
+        }
         currentHealth = startingHealth;
         healthSlider.value = currentHealth;
     }
+
+    private void Update()
+    {
+        if (LevelManager.isGameOver && LevelManager.isWon)
+        {
+            PlayerPrefs.SetInt("startingHealth", currentHealth);
+            PlayerPrefs.Save();
+        }
+    }
+
 
     public void TakeDamage(int damageAmount)
     {
@@ -32,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
     public void Heal(int healAmount)
     {
         currentHealth += healAmount;
-        Mathf.Clamp(currentHealth, 0, startingHealth);
+        Mathf.Clamp(currentHealth, 0, maxHealth);
         healthSlider.value = currentHealth;
     }
 

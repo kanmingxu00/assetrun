@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     public AudioClip winSFX;
     public AudioSource backgroundMusic;
     public static bool isGameOver;
+    public static bool isWon;
     public string levelName;
     public static int score;
     public GameObject player;
@@ -26,6 +27,7 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         isGameOver = false;
+        isWon = false;
         gameText.enabled = false;
         score = 0;
         backgroundMusic.enabled = true;
@@ -107,6 +109,8 @@ public class LevelManager : MonoBehaviour
 
     public void LevelBeat()
     {
+
+        isWon = true;
         /// <summary>method to specify what happens when the level is won</summary>
         ///
         UI.SetActive(false);
