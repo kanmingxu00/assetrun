@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    public string gunName;
     public int damage = 10;
     public float range = 100f;
     public float fireRate = 15f;
@@ -25,6 +26,21 @@ public class Gun : MonoBehaviour
 
     void Start()
     {
+        if (PlayerPrefs.HasKey(gunName + "_damage"))
+        {
+            damage = PlayerPrefs.GetInt(gunName + "_damage");
+        }
+
+        if (PlayerPrefs.HasKey(gunName + "_rate"))
+        {
+            fireRate = PlayerPrefs.GetFloat(gunName + "_rate");
+        }
+
+        if (PlayerPrefs.HasKey(gunName + "_ammo"))
+        {
+            maxAmmo = PlayerPrefs.GetInt(gunName + "_ammo");
+        }
+
         currentAmmo = maxAmmo;
     }
 
@@ -52,6 +68,14 @@ public class Gun : MonoBehaviour
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
+        }
+
+        if (LevelManager.isGameOver)
+        {
+            PlayerPrefs.SetInt(name + "_damage", damage);
+            PlayerPrefs.SetFloat(name + "_reload", reloadTime);
+            PlayerPrefs.SetInt(name + "_ammo", maxAmmo);
+            PlayerPrefs.Save();
         }
     }
 
