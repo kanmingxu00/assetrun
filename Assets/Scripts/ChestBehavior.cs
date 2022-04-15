@@ -1,31 +1,24 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class MoneyShopScript : MonoBehaviour
+public class ChestBehavior : MonoBehaviour
 {
     public Transform player;
     public GameObject image;
     public GameObject canvas;
     public GameObject levelManager;
-    public int shopType = 0;
-
+    public GameObject enemiesRemain;
     private bool canvasOn;
     // Start is called before the first frame update
     void Start()
     {
+
         canvasOn = false;
         image.SetActive(false);
+        enemiesRemain.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        
     }
-
-    //internal void ButtonPressed()
-    //{
-    //    levelManager.GetComponent<Upgrades>().getUpgrade(buttonNumber, 0);
-    //}
 
     // Update is called once per frame
     void Update()
@@ -36,7 +29,15 @@ public class MoneyShopScript : MonoBehaviour
             image.SetActive(true);
             if (Input.GetKeyDown(KeyCode.F))
             {
-                canvasOn = !canvasOn;
+                if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+                {
+                    Debug.Log("cleared");
+                    canvasOn = !canvasOn;
+                } else
+                {
+                    enemiesRemain.SetActive(true);
+                }
+                
             }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -54,13 +55,15 @@ public class MoneyShopScript : MonoBehaviour
                 Cursor.visible = false;
                 canvas.SetActive(false);
             }
-        } else if (distance > 4 && distance < 5)
+        }
+        else if (distance > 4 && distance < 5)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             canvasOn = false;
             canvas.SetActive(false);
             image.SetActive(false);
+            enemiesRemain.SetActive(false);
         }
     }
 

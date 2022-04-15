@@ -80,7 +80,7 @@ public class LevelManager : MonoBehaviour
         // set isGameOver 
         isGameOver = true;
 
-        // update gameText UI component with appropriate message and activate it
+        // update gameText UI component with appropriate mess@kage and activate it
         // message is received as an argument
         gameText.text = gameTextMessage;
         gameText.enabled = true;
