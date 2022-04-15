@@ -37,9 +37,14 @@ public class Upgrades : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().Heal(20);
             GameObject.FindGameObjectWithTag("LevelManager").GetComponent<Database>().SubMoney(20);
         }
-        else
+        else if (shopNumber == 1)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<FPSController>().moveSpeed += .3f;
+            GameObject.FindGameObjectWithTag("LevelManager").GetComponent<Database>().SubBitcoin(1);
+        } else
+        {
+
+            GameObject.FindGameObjectWithTag("Player").GetComponent<FPSController>().moveSpeed += 1.0f;
             GameObject.FindGameObjectWithTag("LevelManager").GetComponent<Database>().SubBitcoin(2);
         }
     }
