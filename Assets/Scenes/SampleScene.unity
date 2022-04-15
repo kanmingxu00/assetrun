@@ -43259,6 +43259,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 559104721}
     - target: {fileID: 4110700528312732951, guid: 3ff2b7350a042bd438bc085b7a3ed50c, type: 3}
+      propertyPath: gunName
+      value: shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110700528312732951, guid: 3ff2b7350a042bd438bc085b7a3ed50c, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1608600459}
@@ -43275,6 +43279,10 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 559104721}
+    - target: {fileID: 4442013571108332851, guid: 2239047e93811934aac9a271c64641b6, type: 3}
+      propertyPath: gunName
+      value: assault
+      objectReference: {fileID: 0}
     - target: {fileID: 4442013571108332851, guid: 2239047e93811934aac9a271c64641b6, type: 3}
       propertyPath: animator
       value: 
@@ -43571,6 +43579,10 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 559104721}
+    - target: {fileID: 7675393646745866884, guid: 02055ef77b43e49428b4fb48a73c2888, type: 3}
+      propertyPath: gunName
+      value: pistol
+      objectReference: {fileID: 0}
     - target: {fileID: 7675393646745866884, guid: 02055ef77b43e49428b4fb48a73c2888, type: 3}
       propertyPath: animator
       value: 
