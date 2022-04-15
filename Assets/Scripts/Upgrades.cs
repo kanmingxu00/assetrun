@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Upgrades : MonoBehaviour
 {
+    public GameObject weapon1;
+    public GameObject weapon2;
+    public GameObject weapon3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,5 +51,25 @@ public class Upgrades : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<FPSController>().moveSpeed += 1.0f;
             GameObject.FindGameObjectWithTag("LevelManager").GetComponent<Database>().SubBitcoin(2);
         }
+        // Allocate shopNumber to these upgrade buttons
+        /**
+         if (shopNumber == 3)
+        {
+            increaseDamage(weapon1)
+        }
+        elif (shopNumber == 4)
+        {
+            increaseDamage(weapon2)
+        }
+        ...
+         */
+    }
+
+    public void increaseDamage(GameObject weapon)
+    {
+        Gun weaponComponent;
+        weaponComponent = weapon.GetComponent<Gun>();
+        weaponComponent.damage += 20;
+
     }
 }

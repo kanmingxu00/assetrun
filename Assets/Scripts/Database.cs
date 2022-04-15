@@ -13,6 +13,8 @@ public class Database : MonoBehaviour
     // simplicity sake, we do one gun with stats upgrades for now
     public static int gunlevel;
     // Start is called before the first frame update
+
+    
     void Start()
     {
         money = 100;
