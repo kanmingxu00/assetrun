@@ -2113,10 +2113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  moveSpeed: 10
+  moveSpeed: 3
   chaseRange: 30
   attackRange: 20
-  damageAmount: 20
   anim: {fileID: 0}
   enemySFX: {fileID: 0}
   enemyDeathSFX: {fileID: 0}

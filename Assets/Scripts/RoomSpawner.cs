@@ -6,7 +6,8 @@ public class RoomSpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
 
-    public int enemyCount = 10;
+    public int repeatingSpawnCount = 5;
+    public int initialSpawnCount = 10;
     int enemiesSpawned = 0;
     bool isActive = false;
     public Transform player;
@@ -19,15 +20,13 @@ public class RoomSpawner : MonoBehaviour
         
         player = GameObject.FindGameObjectWithTag("Player").transform;
         bounds = GetComponent<MeshCollider>().bounds;
-        Debug.Log(bounds.min);
-        Debug.Log(bounds.max);
-        SpawnEnemies();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isActive && enemiesSpawned < enemyCount)
+        if (isActive && enemiesSpawned < initialSpawnCount)
         {
             SpawnEnemies();
         }
@@ -45,9 +44,8 @@ public class RoomSpawner : MonoBehaviour
     void SpawnEnemies()
     {
         Vector3 enemyPosition;
-        // buggy for now, so spawn iin the middle LOL
-        float xmid = (bounds.min.x + bounds.max.x) / 2;
-        float zmid = (bounds.min.z + bounds.max.z) / 2;
+        // float xmid = (bounds.min.x + bounds.max.x) / 2;
+        // float zmid = (bounds.min.z + bounds.max.z) / 2;
         enemyPosition.x = Random.Range(bounds.min.x, bounds.max.x);
         enemyPosition.y = 1.7f;
         enemyPosition.z = Random.Range(bounds.min.z, bounds.max.z);
@@ -72,7 +70,7 @@ public class RoomSpawner : MonoBehaviour
     void SpawnEnemiesRepeating()
     {
         SpawnEnemies();
-        if (enemiesSpawned < enemyCount)
+        if (enemiesSpawned < repeatingSpawnCount)
         {
             Invoke("SpawnEnemiesRepeating", Random.Range(0.5f, 2.5f));
         }

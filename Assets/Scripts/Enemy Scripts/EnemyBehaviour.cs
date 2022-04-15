@@ -16,11 +16,13 @@ public class EnemyBehaviour : MonoBehaviour
     EnemyHealth enemyHealth;
     int health;
     public NavMeshAgent agent;
+    bool isDead = false;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.stoppingDistance = attackRange;
+        agent.speed = moveSpeed;
         enemyHealth = GetComponent<EnemyHealth>();
         health = enemyHealth.currentHealth;
         anim = GetComponent<Animator>();
@@ -38,6 +40,8 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        anim.speed = 1;
+        
         health = enemyHealth.currentHealth;
 
         if (health <=0)
@@ -45,21 +49,16 @@ public class EnemyBehaviour : MonoBehaviour
             die();
         }
         
-        float step = moveSpeed * Time.deltaTime;
 
         float playerDistance = Vector3.Distance(transform.position, player.position);
-        if (playerDistance < chaseRange && playerDistance > attackRange)
+        if (!isDead && playerDistance <= chaseRange && playerDistance > attackRange)
         {
             anim.SetInteger("animState", 2);
             
+            anim.speed = 2;
             FaceTarget(player.position);
             agent.SetDestination(player.position);
-            // if (!anim.applyRootMotion)
-            // {
-            //     Vector3 target = player.position;
-            //     target.y = transform.position.y;
-            //     transform.position = Vector3.MoveTowards(transform.position, target, step);
-            // }
+
         }
         else if (playerDistance <= attackRange)
         {
@@ -79,7 +78,7 @@ public class EnemyBehaviour : MonoBehaviour
         {
 
             //collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageAmount);
-            hitPlayer(collision.gameObject);
+            // hitPlayer(collision.gameObject);
 
 
         }
@@ -100,11 +99,16 @@ public class EnemyBehaviour : MonoBehaviour
 
     void die()
     {
+        isDead = true;
         LevelManager.score += 1;
         Database.money += 1;
         anim.SetInteger("animState", 4);
-        var particles = Instantiate(enemyVFX, transform.position, transform.rotation);
-        Destroy(particles, 2);
+        if (enemyVFX)
+        {
+            var particles = Instantiate(enemyVFX, transform.position, transform.rotation);
+            Destroy(particles, 2);
+        }
+        
         if (enemyDeathSFX)
         {
             
