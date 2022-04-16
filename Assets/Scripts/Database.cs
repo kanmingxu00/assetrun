@@ -17,15 +17,44 @@ public class Database : MonoBehaviour
     
     void Start()
     {
-        money = 100;
-        bitcoin = 0;
-        gunlevel = 0;
+        if (PlayerPrefs.HasKey("money"))
+        {
+            money = PlayerPrefs.GetInt("money");
+        } else
+        {
+            money = 100;
+        }
+
+        if (PlayerPrefs.HasKey("bitcoin"))
+        {
+            bitcoin = PlayerPrefs.GetInt("bitcoin");
+        }
+        else
+        {
+            bitcoin = 0;
+        }
+
+        if (PlayerPrefs.HasKey("gunlevel"))
+        {
+            gunlevel = PlayerPrefs.GetInt("gunlevel");
+        }
+        else
+        {
+            gunlevel = 0;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+        if (LevelManager.isGameOver && LevelManager.isWon)
+        {
+            PlayerPrefs.SetInt("bitcoin", bitcoin);
+            PlayerPrefs.SetInt("money", money);
+            PlayerPrefs.SetInt("gunlevel", gunlevel);
+            PlayerPrefs.Save();
+        }
     }
 
     public void AddMoney(int add)

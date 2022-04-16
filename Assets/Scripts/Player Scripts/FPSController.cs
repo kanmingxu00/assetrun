@@ -38,7 +38,7 @@ public class FPSController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            input *= runSpeed;
+            input *= (moveSpeed * 2);
         } 
         else
         {

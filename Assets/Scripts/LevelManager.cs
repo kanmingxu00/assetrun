@@ -20,6 +20,7 @@ public class LevelManager : MonoBehaviour
     public static int score;
     public GameObject player;
     private PlayerHealth playerHealth;
+    private int buildIndex;
     // Start is called before the first frame update
     public static int playerProjectileDamage = 10;
 
@@ -32,8 +33,10 @@ public class LevelManager : MonoBehaviour
         score = 0;
         backgroundMusic.enabled = true;
         player = GameObject.FindGameObjectWithTag("Player");
+
         playerHealth = player.GetComponent<PlayerHealth>();
-        
+
+
     }
 
     void Start()
@@ -42,6 +45,7 @@ public class LevelManager : MonoBehaviour
         isGameOver = false;
         gameText.enabled = false;
         backgroundMusic = Camera.main.GetComponent<AudioSource>();
+        buildIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
@@ -92,7 +96,7 @@ public class LevelManager : MonoBehaviour
 
         // play level status sfx
         // sfx clip is received as an argument
-        // AudioSource.PlayClipAtPoint(statusSFX, Camera.main.transform.position);
+        AudioSource.PlayClipAtPoint(statusSFX, Camera.main.transform.position);
 
     }
     public void LevelLost()
@@ -120,16 +124,17 @@ public class LevelManager : MonoBehaviour
         
 
         backgroundMusic.enabled = false;
-        Invoke("LoadNextLevel", 2);
+        if (SceneManager.GetActiveScene().buildIndex < 1)
+        {
+            Invoke("LoadNextLevel", 2);
+        }
+        
 
     }
 
     void LoadNextLevel()
     {
-        if (levelName != "")
-        {
-            SceneManager.LoadScene(levelName);
-        }
+        SceneManager.LoadScene(buildIndex + 1);
     }
 
     void LoadCurrentLevel()
