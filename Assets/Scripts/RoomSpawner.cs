@@ -75,6 +75,10 @@ public class RoomSpawner : MonoBehaviour
         
             enemiesSpawned++;
         }
+        else 
+        {
+            SpawnEnemies();
+        }
         
     }
 

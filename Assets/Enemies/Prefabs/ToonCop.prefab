@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   moveSpeed: 10
-  chaseRange: 30
+  chaseRange: 60
   attackRange: 15
   anim: {fileID: 5502576700847885072}
   enemySFX: {fileID: 0}

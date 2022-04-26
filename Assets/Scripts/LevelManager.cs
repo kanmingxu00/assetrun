@@ -124,7 +124,7 @@ public class LevelManager : MonoBehaviour
         
 
         backgroundMusic.enabled = false;
-        if (SceneManager.GetActiveScene().buildIndex < 1)
+        if (SceneManager.GetActiveScene().buildIndex < 2)
         {
             Invoke("LoadNextLevel", 2);
         }

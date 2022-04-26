@@ -148,6 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  maxHealth: 100
+  currentHealth: 100
+  healthSlider: {fileID: 0}
 --- !u!1 &5457931167661405867
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,5 +264,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd334decebf8559458b84de937df3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
   projectileSpeed: 10
+  weapon1: {fileID: 0}
+  weapon2: {fileID: 0}
+  weapon3: {fileID: 0}
+  weapon4: {fileID: 0}
+  currentWeapon: {fileID: 0}
+  gunShotSFX: {fileID: 0}

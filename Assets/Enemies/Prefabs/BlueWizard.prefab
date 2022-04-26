@@ -1252,6 +1252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1823173409967616, guid: a2aef5d4d42e87e498f6e321c325c7bd, type: 3}
   projectileSpawn: {fileID: 970955225}
+  shotSFX: {fileID: 0}
 --- !u!114 &502841470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,7 +1282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   moveSpeed: 3
-  chaseRange: 30
+  chaseRange: 60
   attackRange: 30
   anim: {fileID: 0}
   enemySFX: {fileID: 0}

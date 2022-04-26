@@ -1332,8 +1332,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  moveSpeed: 10
-  chaseRange: 30
+  moveSpeed: 13
+  chaseRange: 60
   attackRange: 3
   anim: {fileID: 3044940282110886175}
   enemySFX: {fileID: 0}
