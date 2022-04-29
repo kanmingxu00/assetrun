@@ -8,11 +8,11 @@ public class Upgrades : MonoBehaviour
     public GameObject weapon2;
     public GameObject weapon3;
 
-    string[,] upgradeStrings = new string[3, 5]
+    string[,] upgradeStrings = new string[3, 7]
         {
-            { "heal-20-20", "movespeed-20-10", "heal-10-10", "movespeed-2-22", "movespeed-3-35"},
-            { "rof-1-1", "damage-2-1", "rspeed-1-1", "clip-2-1", "damage-5-2" },
-            { "rof-1-0", "damage-2-0", "clip-2-0", "rspeed-1-0", "damage-5-0" }
+            { "heal-20-20", "movespeed-1-10", "heal-10-10", "movespeed-2-22", "movespeed-3-35", "rof-1-30", "rof-2-50", },
+            { "rof-1-1", "damage-2-1", "rspeed-1-1", "clip-2-1", "damage-5-2", "rspeed-2-2", "rspeed-3-3" },
+            { "rof-1-0", "damage-2-0", "clip-15-0", "rspeed-2-0", "damage-5-0", "clip-30-0", "rspeed-3-0" }
         };
 
     // Start is called before the first frame update

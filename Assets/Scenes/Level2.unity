@@ -1075,7 +1075,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh158302
+  m_Name: pb_Mesh260678
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1285,7 +1285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c090978f0f4496fbd79be7c6df155d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonNumber: 2
+  ButtonNumber: 0
   shopKeeper: {fileID: 959799260}
   shopNumber: 1
 --- !u!114 &74927860
@@ -1766,7 +1766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c090978f0f4496fbd79be7c6df155d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonNumber: 3
+  ButtonNumber: 5
   shopKeeper: {fileID: 959799260}
   shopNumber: 2
 --- !u!114 &126243534
@@ -2463,7 +2463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c090978f0f4496fbd79be7c6df155d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonNumber: 3
+  ButtonNumber: 5
   shopKeeper: {fileID: 959799260}
   shopNumber: 1
 --- !u!114 &136070350
@@ -2836,7 +2836,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-163194
+  m_Name: pb_Mesh-403242
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3751,7 +3751,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-163218
+  m_Name: pb_Mesh-403266
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8908,7 +8908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c090978f0f4496fbd79be7c6df155d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonNumber: 3
+  ButtonNumber: 5
   shopKeeper: {fileID: 455094719}
   shopNumber: 0
 --- !u!1 &435029083
@@ -11351,7 +11351,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-163242
+  m_Name: pb_Mesh-403290
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15104,7 +15104,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-163266
+  m_Name: pb_Mesh-403314
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16439,7 +16439,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 0
   m_Interactable: 0
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1001 &737814710
 PrefabInstance:
@@ -18650,7 +18650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c090978f0f4496fbd79be7c6df155d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonNumber: 4
+  ButtonNumber: 3
   shopKeeper: {fileID: 455094719}
   shopNumber: 0
 --- !u!1 &900700417
@@ -18996,7 +18996,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-163180
+  m_Name: pb_Mesh-403228
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21978,7 +21978,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-163278
+  m_Name: pb_Mesh-403326
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22478,7 +22478,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-163206
+  m_Name: pb_Mesh-403254
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26182,7 +26182,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh157598
+  m_Name: pb_Mesh259974
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27127,7 +27127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c090978f0f4496fbd79be7c6df155d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonNumber: 2
+  ButtonNumber: 0
   shopKeeper: {fileID: 455094719}
   shopNumber: 0
 --- !u!43 &1341512245
@@ -31309,7 +31309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 8546628228262350467, guid: 653551677e633a54ba25dde3a454ccbb, type: 3}
   repeatingSpawnCount: 2
-  initialSpawnCount: 3
+  initialSpawnCount: 2
   player: {fileID: 0}
   onMeshThreshold: 3
 --- !u!114 &1507405138
@@ -38236,7 +38236,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-163254
+  m_Name: pb_Mesh-403302
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -42074,7 +42074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 3182844503684565947, guid: 6c2f2b36ce691d443a49a7b1b84f0478, type: 3}
   repeatingSpawnCount: 1
-  initialSpawnCount: 3
+  initialSpawnCount: 2
   player: {fileID: 0}
   onMeshThreshold: 3
 --- !u!114 &2068569222
@@ -42091,7 +42091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 3044940282118157009, guid: d22b2ab185662b24c93d5e2c341956bf, type: 3}
   repeatingSpawnCount: 2
-  initialSpawnCount: 3
+  initialSpawnCount: 2
   player: {fileID: 0}
   onMeshThreshold: 3
 --- !u!4 &2077806522 stripped
@@ -42140,7 +42140,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-163230
+  m_Name: pb_Mesh-403278
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -43305,7 +43305,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7888679458484046123, guid: 57be3668f44d6294698f4c7128927281, type: 3}
       propertyPath: initialSpawnCount
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888679458484046123, guid: 57be3668f44d6294698f4c7128927281, type: 3}
+      propertyPath: repeatingSpawnCount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7888679458484046124, guid: 57be3668f44d6294698f4c7128927281, type: 3}
       propertyPath: initialSpawnCount
