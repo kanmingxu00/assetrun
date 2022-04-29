@@ -31379,6 +31379,8 @@ MonoBehaviour:
   menu: {fileID: 1030118675}
   reticle: {fileID: 138287651}
   audioMixer: {fileID: 24100000, guid: fc1306987bceb154c9035e34e64e26a6, type: 2}
+  volumeSlider: {fileID: 349087121}
+  sensitivitySlider: {fileID: 602703732}
 --- !u!4 &1464436416 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7428418886340263316, guid: d6ac486766ad64accae882d8a08aeed4, type: 3}
