@@ -47,12 +47,14 @@ public class MoneyShopScript : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 canvas.SetActive(true);
+                Gun.isShopping = true;
             }
             else
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 canvas.SetActive(false);
+                Gun.isShopping = false;
             }
         } else if (distance > 4 && distance < 5)
         {
@@ -61,6 +63,7 @@ public class MoneyShopScript : MonoBehaviour
             canvasOn = false;
             canvas.SetActive(false);
             image.SetActive(false);
+            Gun.isShopping = false;
         }
     }
 

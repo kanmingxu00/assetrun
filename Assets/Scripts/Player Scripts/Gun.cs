@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
@@ -19,7 +20,8 @@ public class Gun : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
     public AudioClip gunShotSFX;
-
+    public Text ammoUI;
+    public static bool isShopping = false;
     public Animator animator;
 
     private float nextTimeToFire = 0f;
@@ -47,42 +49,54 @@ public class Gun : MonoBehaviour
         }
 
         currentAmmo = maxAmmo;
+        UpdateUI();
     }
 
     private void OnEnable()
     {
         isReloading = false;
         animator.SetBool("Reloading", false);
+        UpdateUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isReloading)
+        if (Time.timeScale != 0 && !isShopping)
         {
-            return;
-        }
+            if (isReloading)
+            {
+                return;
+            }
 
-        if (currentAmmo <= 0 || Input.GetKeyDown(KeyCode.R))
-        {
-            StartCoroutine(Reload());
-            return;
-        }
+            if (currentAmmo <= 0 || Input.GetKeyDown(KeyCode.R))
+            {
+                StartCoroutine(Reload());
+                return;
+            }
 
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
-        {
-            nextTimeToFire = Time.time + 1f / fireRate;
-            Shoot();
-        }
+            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Shoot();
+            }
 
-        if (LevelManager.isGameOver && LevelManager.isWon)
-        {
-            PlayerPrefs.SetInt(name + "_damage", damage);
-            PlayerPrefs.SetFloat(name + "_rate", fireRate);
-            PlayerPrefs.SetFloat(name + "_reload", reloadTime);
-            PlayerPrefs.SetInt(name + "_ammo", maxAmmo);
-            PlayerPrefs.Save();
+            if (LevelManager.isGameOver && LevelManager.isWon)
+            {
+                PlayerPrefs.SetInt(name + "_damage", damage);
+                PlayerPrefs.SetFloat(name + "_rate", fireRate);
+                PlayerPrefs.SetFloat(name + "_reload", reloadTime);
+                PlayerPrefs.SetInt(name + "_ammo", maxAmmo);
+                PlayerPrefs.Save();
+            }
+
+            UpdateUI();
         }
+    }
+
+    void UpdateUI()
+    {
+        ammoUI.text = currentAmmo.ToString() + " / " + maxAmmo.ToString();
     }
 
     IEnumerator Reload()
@@ -115,8 +129,8 @@ public class Gun : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
 
-            // GameObject impactObject = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            // Destroy(impactObject, 2f);
+            //GameObject impactObject = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            //Destroy(impactObject, 2f);
         }
         currentAmmo--;
 

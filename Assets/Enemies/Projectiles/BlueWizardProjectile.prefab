@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4858937482695692}
   - component: {fileID: 96035664195817048}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TrailAB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 4105823258859568}
   - component: {fileID: 198575107678247754}
   - component: {fileID: 199422597222687222}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4972,7 +4972,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 692dfdefcd910164cbc23e29df21b0ef, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5029,7 +5028,7 @@ GameObject:
   - component: {fileID: 4264289279487840}
   - component: {fileID: 198266968083734374}
   - component: {fileID: 199645359472069996}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9846,7 +9845,7 @@ GameObject:
   - component: {fileID: 4703256721773482}
   - component: {fileID: 198181270326050850}
   - component: {fileID: 199820664752431246}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BeamAB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14669,7 +14668,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 761fcaf3853386b4c80234bc48bdd122, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14725,7 +14723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4806424652456670}
   - component: {fileID: 96575799372169198}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14869,7 +14867,7 @@ GameObject:
   - component: {fileID: 54780134100305680}
   - component: {fileID: 8625527196300847656}
   - component: {fileID: 7081256942512190432}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BlueWizardProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -14938,7 +14936,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 8c434bf307fae51488004366fd3854eb, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
