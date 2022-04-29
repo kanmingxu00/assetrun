@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
     private int buildIndex;
     // Start is called before the first frame update
     public static int playerProjectileDamage = 10;
-
+    float timePlayed;
     public GameObject UI;
     private void Awake()
     {
@@ -46,6 +46,19 @@ public class LevelManager : MonoBehaviour
         gameText.enabled = false;
         backgroundMusic = Camera.main.GetComponent<AudioSource>();
         buildIndex = SceneManager.GetActiveScene().buildIndex;
+        if (PlayerPrefs.HasKey("score"))
+        {
+            score = PlayerPrefs.GetInt("score");
+        }
+        if (PlayerPrefs.HasKey("time_played"))
+        {
+            timePlayed = PlayerPrefs.GetFloat("time_played");
+        }
+        else
+        {
+            timePlayed = 0.0f;
+        }
+        Debug.Log(timePlayed);
     }
 
     // Update is called once per frame
@@ -64,6 +77,7 @@ public class LevelManager : MonoBehaviour
             //    LevelBeat();
             //}
         }
+        timePlayed += Time.deltaTime;
 
         SetScoreText();
         SetCurrencyText();
@@ -88,7 +102,9 @@ public class LevelManager : MonoBehaviour
 
         // set isGameOver 
         isGameOver = true;
-
+        
+        PlayerPrefs.SetFloat("time_played", timePlayed);
+        
         // update gameText UI component with appropriate mess@kage and activate it
         // message is received as an argument
         gameText.text = gameTextMessage;
@@ -121,7 +137,7 @@ public class LevelManager : MonoBehaviour
         gameObject.GetComponent<Fade>().FadeMe();
         // call SetGameOverStatus with "YOU WIN!"
         SetGameOverStatus("YOU WIN!", winSFX);
-        
+        PlayerPrefs.SetInt("score", score);
 
         backgroundMusic.enabled = false;
         if (SceneManager.GetActiveScene().buildIndex < 2)
