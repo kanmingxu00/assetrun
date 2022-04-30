@@ -140,7 +140,7 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetInt("score", score);
 
         backgroundMusic.enabled = false;
-        if (SceneManager.GetActiveScene().buildIndex < 2)
+        if (SceneManager.GetActiveScene().buildIndex < 4)
         {
             Invoke("LoadNextLevel", 2);
         }

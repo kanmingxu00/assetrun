@@ -38,8 +38,29 @@ public class MainMenuManager : MonoBehaviour
             winsText.text = "0";
         }
     }
+
     public void StartGame()
     {
+        float tempTime = 0;
+        int tempScore = 0;
+        int tempWins = 0;
+
+        if (PlayerPrefs.HasKey("time_played"))
+        {
+            tempTime = PlayerPrefs.GetFloat("time_played");
+        }
+        if (PlayerPrefs.HasKey("high_score"))
+        {
+            tempScore = PlayerPrefs.GetInt("high_score");
+        }
+        if (PlayerPrefs.HasKey("game_wins"))
+        {
+            tempWins = PlayerPrefs.GetInt("game_wins");
+        }
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetFloat("time_played", tempTime);
+        PlayerPrefs.SetInt("high_score", tempScore);
+        PlayerPrefs.SetFloat("game_wins", tempWins);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
     }

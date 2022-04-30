@@ -43,7 +43,7 @@ public class Gun : MonoBehaviour
             maxAmmo = PlayerPrefs.GetInt(gunName + "_ammo");
         }
 
-        if (PlayerPrefs.HasKey(gunName + "_ammo"))
+        if (PlayerPrefs.HasKey(gunName + "_reload"))
         {
             reloadTime = PlayerPrefs.GetFloat(gunName + "_reload");
         }
@@ -83,10 +83,10 @@ public class Gun : MonoBehaviour
 
             if (LevelManager.isGameOver && LevelManager.isWon)
             {
-                PlayerPrefs.SetInt(name + "_damage", damage);
-                PlayerPrefs.SetFloat(name + "_rate", fireRate);
-                PlayerPrefs.SetFloat(name + "_reload", reloadTime);
-                PlayerPrefs.SetInt(name + "_ammo", maxAmmo);
+                PlayerPrefs.SetInt(gunName + "_damage", damage);
+                PlayerPrefs.SetFloat(gunName + "_rate", fireRate);
+                PlayerPrefs.SetFloat(gunName + "_reload", reloadTime);
+                PlayerPrefs.SetInt(gunName + "_ammo", maxAmmo);
                 PlayerPrefs.Save();
             }
 
