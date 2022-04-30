@@ -74,9 +74,9 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Untagged"))
         {
-
+            Destroy(gameObject);
             //collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damageAmount);
             // hitPlayer(collision.gameObject);
 
